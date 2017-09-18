@@ -43,12 +43,10 @@ public:
 
     SmartPtr<T> &operator=(const SmartPtr<T> &smart) {
         if (this != &smart) {
-            if (smart.object_) {
-                smart.object_->IncReference();
-            }
+            if (smart.object_) smart.object_->IncReference();
             if (root_) {   // TODO: problems?
                 gc_->DelObjs(object_, true);
-                if (!smart.root_) smart.gc_->AddObjs(smart.object_, true);
+                if (!smart.root_ && smart.gc_) smart.gc_->AddObjs(smart.object_, true);
             }
             DecAndRelease();
             gc_ = smart.gc_;
