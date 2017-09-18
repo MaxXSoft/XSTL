@@ -1,4 +1,4 @@
-#include "../str_hash.h"
+#include "../src/str_hash.h"
 
 #include <iostream>
 
