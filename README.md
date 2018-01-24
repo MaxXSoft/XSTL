@@ -10,6 +10,7 @@ write some gadgets to eXtend STL ...
 * **[str_hash.h](src/str_hash.h)**: get the hash value of a string constant while compile time
 * **[argh.h](src/argh.h)**: parse command line arguments
 * **[gc/smart_gc.h](src/gc/smart_gc.h)**: using *reference counting* and *mark-and-sweep* garbage collecting techniques to release resources, you can use it just like using `std::shared_ptr`!
+* **[range.h](src/range.h)**: can be used in a range-based for loop, like 'range()' in Python
 
 ## Examples
 
