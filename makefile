@@ -26,13 +26,16 @@ argh_out = $(build_dir)argh
 gc_targets = $(exp_dir)gc.cpp
 gc_out = $(build_dir)gc
 
+range_targets = $(exp_dir)range.cpp
+range_out = $(build_dir)range
+
 CC = $(cc) $(debug_arg) -std=$(std) $(opt_arg)
 
 .PHONY: all example raii str_hash argh gc clean clean_dbg
 
 all: example
 
-example: raii str_hash argh gc
+example: raii str_hash argh gc range
 
 raii: $(raii_targets)
 	$(CC) $(raii_targets) -o $(raii_out)
@@ -46,8 +49,11 @@ argh:
 gc:
 	$(CC) $(gc_targets) -o $(gc_out)
 
+range:
+	$(CC) $(range_targets) -o $(range_out)
+
 clean: clean_dbg
-	rm $(raii_out) $(str_hash_out) $(argh_out) $(gc_out)
+	rm $(raii_out) $(str_hash_out) $(argh_out) $(gc_out) $(range_out)
 
 clean_dbg:
 	-rm -r $(build_dir)*.dSYM
