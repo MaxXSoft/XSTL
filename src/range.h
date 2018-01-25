@@ -7,7 +7,7 @@
 namespace xstl {
 
 // NumTy: a type that can hold a number, such as 'int' or 'long'
-template <typename NumTy>
+template <typename NumTy = int>
 class Range {
 public:
     using IterFunc = std::function<bool(NumTy &)>;

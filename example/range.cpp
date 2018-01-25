@@ -6,17 +6,17 @@ using namespace std;
 
 int main(int argc, const char *argv[]) {
     cout << "range test 1:" << endl;
-    for (const auto &i : xstl::Range<int>(10)) {
+    for (const auto &i : xstl::Range(10)) {
         cout << i << ' ';
     }
     cout << endl;
     cout << "range test 2:" << endl;
-    for (const auto &i : xstl::Range<int>(10, 20)) {
+    for (const auto &i : xstl::Range(10, 20)) {
         cout << i << ' ';
     }
     cout << endl;
     cout << "range test 3:" << endl;
-    for (const auto &i : xstl::Range<int>(10, 20, 2)) {
+    for (const auto &i : xstl::Range(10, 20, 2)) {
         cout << i << ' ';
     }
     cout << endl;
