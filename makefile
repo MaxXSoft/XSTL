@@ -1,5 +1,5 @@
 export cc = g++
-export std = c++1z
+export std = c++17
 export opt_level = 2
 export build_dir = build/
 export debug = false
