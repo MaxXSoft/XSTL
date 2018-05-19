@@ -30,7 +30,7 @@ public:
     RAII(const RAII &raii) = delete;   // disable copy constructor
     ~RAII() { if (destruct_tag_) destruct_(); }
 
-    RAII& operator=(const RAII &raii) = delete;   // dosable assignment operator
+    RAII& operator=(const RAII &raii) = delete;   // disable assignment operator
 
 private:
     FunctionType destruct_;
