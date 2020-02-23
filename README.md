@@ -33,4 +33,4 @@ C++17 required.
 
 ## Copyright and License
 
-Copyright (C) 2010-2020 MaxXSoft. License GPLv3.
+Copyright (C) 2010-2020 MaxXSoft. License MIT.
