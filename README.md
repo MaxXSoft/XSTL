@@ -25,7 +25,7 @@ We do not recommend you to use the following gadgets in your project since they 
 
 ## Examples
 
-See [example](examples) directory.
+See [examples](examples) directory.
 
 ## Requirement
 
