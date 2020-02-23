@@ -1,5 +1,5 @@
-#ifndef XSTL_RANGE_H_
-#define XSTL_RANGE_H_
+#ifndef XSTL_DEPRECATED_RANGE_H_
+#define XSTL_DEPRECATED_RANGE_H_
 
 #include <functional>
 #include <cassert>
@@ -67,4 +67,4 @@ class Range {
 
 }  // namespace xstl
 
-#endif  // XSTL_RANGE_H_
+#endif  // XSTL_DEPRECATED_RANGE_H_

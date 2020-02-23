@@ -1,7 +1,7 @@
 // Reference: http://blog.csdn.net/10km/article/details/49847271
 
-#ifndef XSTL_RAII_H_
-#define XSTL_RAII_H_
+#ifndef XSTL_DEPRECATED_RAII_H_
+#define XSTL_DEPRECATED_RAII_H_
 
 #include <type_traits>
 #include <functional>
@@ -72,4 +72,4 @@ RAII MakeRAII(Res &res, Destruct destruct) {
 
 }  // namespace xstl
 
-#endif  // XSTL_RAII_H_
+#endif  // XSTL_DEPRECATED_RAII_H_

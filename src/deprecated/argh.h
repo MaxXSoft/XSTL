@@ -1,5 +1,5 @@
-#ifndef XSTL_ARGH_H_
-#define XSTL_ARGH_H_
+#ifndef XSTL_DEPRECATED_ARGH_H_
+#define XSTL_DEPRECATED_ARGH_H_
 
 #include <map>
 #include <string>
@@ -64,4 +64,4 @@ class ArgumentHandler {
 
 }  // namespace xstl
 
-#endif  // XSTL_ARGH_H_
+#endif  // XSTL_DEPRECATED_ARGH_H_

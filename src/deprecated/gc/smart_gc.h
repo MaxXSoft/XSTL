@@ -1,7 +1,7 @@
 // C++17 required
 
-#ifndef XSTL_GC_SMART_GC_H_
-#define XSTL_GC_SMART_GC_H_
+#ifndef XSTL_DEPRECATED_GC_SMART_GC_H_
+#define XSTL_DEPRECATED_GC_SMART_GC_H_
 
 #include <deque>
 
@@ -71,4 +71,4 @@ class SmartGC {
 
 }  // namespace xstl
 
-#endif  // XSTL_GC_SMART_GC_H_
+#endif  // XSTL_DEPRECATED_GC_SMART_GC_H_

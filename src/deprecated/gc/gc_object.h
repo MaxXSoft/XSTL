@@ -1,5 +1,5 @@
-#ifndef XSTL_GC_GC_OBJECT_H_
-#define XSTL_GC_GC_OBJECT_H_
+#ifndef XSTL_DEPRECATED_GC_GC_OBJECT_H_
+#define XSTL_DEPRECATED_GC_GC_OBJECT_H_
 
 #include <functional>
 #include <deque>
@@ -78,4 +78,4 @@ class GCObject {
 
 }  // namespace xstl::_gc
 
-#endif  // XSTL_GC_GC_OBJECT_H_
+#endif  // XSTL_DEPRECATED_GC_GC_OBJECT_H_

@@ -1,7 +1,7 @@
 // Reference: http://www.klayge.org/?p=2201
 
-#ifndef XSTL_STR_HASH_H_
-#define XSTL_STR_HASH_H_
+#ifndef XSTL_DEPRECATED_STR_HASH_H_
+#define XSTL_DEPRECATED_STR_HASH_H_
 
 #include <cstddef>
 
@@ -34,4 +34,4 @@ inline size_t StringHashRT(const char *str) {
 
 }  // namespace xstl
 
-#endif  // XSTL_STR_HASH_H_
+#endif  // XSTL_DEPRECATED_STR_HASH_H_

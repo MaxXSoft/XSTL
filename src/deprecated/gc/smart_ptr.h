@@ -1,5 +1,5 @@
-#ifndef XSTL_GC_SMART_PTR_H_
-#define XSTL_GC_SMART_PTR_H_
+#ifndef XSTL_DEPRECATED_GC_SMART_PTR_H_
+#define XSTL_DEPRECATED_GC_SMART_PTR_H_
 
 #include <utility>
 #include <cstddef>
@@ -103,4 +103,4 @@ class SmartPtr {
 
 }  // namespace xstl::_gc
 
-#endif  // XSTL_GC_SMART_PTR_H_
+#endif  // XSTL_DEPRECATED_GC_SMART_PTR_H_
