@@ -5,7 +5,7 @@
 
 #include <deque>
 
-#include "gc/gc_object.h"
+#include "deprecated/gc/gc_object.h"
 
 namespace xstl {
 

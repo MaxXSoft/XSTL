@@ -12,8 +12,8 @@ class GCObject {
   using Deleter = std::function<void(GCObject *, void *)>;
 
   GCObject(GCObject *parent, void *ptr, Deleter &&deleter)
-      : parent_(parent), ptr_(ptr), deleter_(deleter),
-        counter_(1), marked_(false) {
+      : parent_(parent), counter_(1), ptr_(ptr),
+        deleter_(deleter), marked_(false) {
     ParentAdd();
   }
 
