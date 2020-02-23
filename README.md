@@ -1,6 +1,6 @@
 # XSTL
 
-Write some gadgets to eXtend STL ...
+Write some lightweight gadgets to eXtend STL ...
 
 ## Gadgets
 
@@ -10,8 +10,12 @@ Write some gadgets to eXtend STL ...
 * **[cast.h](src/cast.h)**: casting between different pointer types or endians
 * **[argparse.h](src/argparse.h)**: command line argument parser
 * **[style.h](src/style.h)**: set output style of `std::ostream`
+* **[bitvalue.h](src/bitvalue.h)**: bit extraction/concatenation, can be used in both runtime and compile time
+* **[bitpat.h](src/bitpat.h)**: bitwise pattern match
 
-### Deprecated
+### Deprecated Gadgets
+
+We do not recommend you to use the following gadgets in your project since they are too shabby:
 
 * **[raii.h](src/deprecated/raii.h)**: using *RAII* to release resources automatically
 * **[str_hash.h](src/deprecated/str_hash.h)**: get the hash value of a string constant while compile time
@@ -21,7 +25,7 @@ Write some gadgets to eXtend STL ...
 
 ## Examples
 
-See [example](example/) dir.
+See [example](example) directory.
 
 ## Requirement
 
