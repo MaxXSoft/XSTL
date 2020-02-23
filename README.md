@@ -4,7 +4,12 @@ Write some gadgets to eXtend STL ...
 
 ## Gadgets
 
-* **[progress.h](src/progress)**: display progress bar in terminal.
+* **[progress.h](src/progress.h)**: display progress bar in terminal
+* **[singleton.h](src/singleton.h)**: a base template class of singleton (thread-safe)
+* **[os.h](src/os.h)**: macros about platform/compiler
+* **[cast.h](src/cast.h)**: casting between different pointer types or endians
+* **[argparse.h](src/argparse.h)**: command line argument parser
+* **[style.h](src/style.h)**: set output style of `std::ostream`
 
 ### Deprecated
 
