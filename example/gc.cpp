@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../src/gc/smart_gc.h"
+#include "gc/gc.h"
 
 using namespace std;
 
