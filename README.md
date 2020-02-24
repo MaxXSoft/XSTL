@@ -10,6 +10,8 @@ Write some lightweight gadgets to eXtend STL ...
 * **[cast.h](src/cast.h)**: casting between different pointer types or endians
 * **[argparse.h](src/argparse.h)**: command line argument parser
 * **[style.h](src/style.h)**: set output style of `std::ostream`
+* **[guard.h](src/guard.h)**: do something when leaving current block (used to generate type info and IR in *[TinyLang](https://github.com/MaxXSoft/TinyMIPS/blob/master/src/compiler/front/analyzer.h)*, combining with visitor pattern)
+* **[nested.h](src/nested.h)**: nested map, supported recursive lookup
 * **[bitvalue.h](src/bitvalue.h)**: bit extraction/concatenation, can be used in both runtime and compile time
 * **[bitpat.h](src/bitpat.h)**: bitwise pattern match
 
