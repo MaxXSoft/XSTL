@@ -24,7 +24,7 @@ struct IsHashable<T, std::void_t<decltype(std::declval<std::hash<T>>()(
 // use 'std::unordered_map' if type 'K' is hashable,
 // otherwise use 'std::map'
 template <typename K, typename V>
-using Map = typename std::conditional<_nested_helper::IsHashable<K>::value,
+using Map = typename std::conditional<IsHashable<K>::value,
                                       std::unordered_map<K, V>,
                                       std::map<K, V>>::type;
 
