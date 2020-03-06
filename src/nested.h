@@ -73,6 +73,9 @@ class NestedMapBase {
   // remove item recursively
   bool RemoveItem(const K &key) { return RemoveItem(key, true); }
 
+  // access item
+  V &AccessItem(const K &key) { return map_[key]; }
+
   // access operator
   V &operator[](const K &key) { return map_[key]; }
 
