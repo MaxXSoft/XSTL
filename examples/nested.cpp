@@ -18,11 +18,17 @@ int main(int argc, const char *argv[]) {
   map->AddItem("Elizabeth", 15);
   map->AddItem("John", 16);
   map->AddItem("Robert", 15);
+
   auto age = map->GetItem("Linda");
   assert(!!age);
   cout << "Linda: " << *age << endl;
+
   age = map->GetItem("Robert");
   assert(!!age);
   cout << "Robert: " << *age << endl;
+
+  cout << boolalpha << !!map->GetItem("James") << endl;
+  cout << boolalpha << map->RemoveItem("James") << endl;
+  cout << boolalpha << !!map->GetItem("James") << endl;
   return 0;
 }
