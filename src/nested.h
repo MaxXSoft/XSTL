@@ -73,6 +73,9 @@ class NestedMapBase {
   // remove item recursively
   bool RemoveItem(const K &key) { return RemoveItem(key, true); }
 
+  // access operator
+  V &operator[](const K &key) { return map_[key]; }
+
   // getters
   // outer map
   const NestedMapPtr<K, V> &outer() const { return outer_; }
