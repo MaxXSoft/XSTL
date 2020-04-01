@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "argparse.h"
 
@@ -14,6 +15,7 @@ int main(int argc, const char *argv[]) {
   argp.AddOption<bool>("option", "o", "an option", false);
   argp.AddOption<int>("number", "n", "a number", 42);
   argp.AddOption<string>("string", "s", "a string", "hello");
+  argp.AddOption<vector<string>>("str-vec", "sv", "a string vector", {});
   // parse argument
   auto ret = argp.Parse(argc, argv);
   // check if need to exit program
@@ -35,5 +37,9 @@ int main(int argc, const char *argv[]) {
   cout << "option: " << boolalpha << argp.GetValue<bool>("option") << endl;
   cout << "number: " << argp.GetValue<int>("number") << endl;
   cout << "string: " << argp.GetValue<string>("string") << endl;
+  cout << "str-vec: " << endl;
+  for (const auto &i : argp.GetValue<vector<string>>("str-vec")) {
+    cout << "  " << i << endl;
+  }
   return 0;
 }

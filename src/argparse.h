@@ -19,10 +19,13 @@
   f(float) f(double) f(long double) f(std::string)
 // expand to type check
 #define ARGPARSE_EXPAND_EQL(t)                                    \
-  type == typeid(t) ||
+  type == typeid(t) || type == typeid(std::vector<t>) ||
 // expand to value read
 #define ARGPARSE_EXPAND_READ(t)                                   \
-  if (value.type() == typeid(t)) return ReadValue<t>(arg, value);
+  if (value.type() == typeid(t)) return ReadValue<t>(arg, value); \
+  if (value.type() == typeid(std::vector<t>)) {                   \
+    return ReadToVec<t>(arg, value);                              \
+  }
 
 namespace xstl {
 
@@ -67,8 +70,12 @@ class ArgParser {
 
   // get parsed value
   template <typename T>
-  T GetValue(const std::string &name) {
-    return std::any_cast<T>(vals_[name]);
+  T GetValue(const std::string &name) const {
+    auto it = vals_.find(name);
+    assert(it != vals_.end());
+    auto ptr = std::any_cast<T>(&it->second);
+    assert(ptr);
+    return *ptr;
   }
 
   // parse argument
@@ -175,6 +182,15 @@ class ArgParser {
     T v;
     iss >> v;
     value = v;
+    return !iss.fail();
+  }
+
+  template <typename T>
+  bool ReadToVec(const char *str, std::any &value) {
+    std::istringstream iss(str);
+    T v;
+    iss >> v;
+    std::any_cast<std::vector<T>>(&value)->push_back(v);
     return !iss.fail();
   }
 
