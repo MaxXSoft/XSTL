@@ -144,7 +144,7 @@ class BitMatch {
   }
 
   // perform bit pattern match
-  std::optional<Val> Find(T value) {
+  std::optional<Val> Find(T value) const {
     auto it = matches_.find(value & mask_);
     if (it == matches_.end()) {
       return default_val_;
