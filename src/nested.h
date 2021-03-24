@@ -44,8 +44,9 @@ class NestedMapBase {
   NestedMapBase(const NestedMapPtr<K, V> &outer) : outer_(outer) {}
 
   // add item to current map
-  void AddItem(const K &key, const V &value) {
-    map_.insert({key, value});
+  // returns true if the operation takes effect
+  bool AddItem(const K &key, const V &value) {
+    return map_.insert({key, value}).second;
   }
 
   // get item
