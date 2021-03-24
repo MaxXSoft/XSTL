@@ -49,14 +49,17 @@ class NestedMapBase {
   }
 
   // get item
+  // returns 'null' (nullptr/nullopt) if not found
   V GetItem(const K &key, bool recursive) const {
     return static_cast<const T *>(this)->GetItemImpl(key, recursive);
   }
 
   // get item recursively
+  // returns 'null' (nullptr/nullopt) if not found
   V GetItem(const K &key) const { return GetItem(key, true); }
 
   // remove item
+  // returns true if the remove operation takes effect
   bool RemoveItem(const K &key, bool recursive) {
     auto num = map_.erase(key);
     if (num) {
@@ -71,12 +74,35 @@ class NestedMapBase {
   }
 
   // remove item recursively
+  // returns true if the remove operation takes effect
   bool RemoveItem(const K &key) { return RemoveItem(key, true); }
 
-  // access item
+  // update item
+  // returns true if the update operation takes effect
+  bool UpdateItem(const K &key, const V &value, bool recursive) {
+    auto it = map_.find(key);
+    if (it != map_.end()) {
+      it->second = value;
+      return true;
+    }
+    else if (outer_ && recursive) {
+      return outer_->UpdateItem(key, value);
+    }
+    else {
+      return false;
+    }
+  }
+
+  // update item recursively
+  // returns true if the update operation takes effect
+  bool UpdateItem(const K &key, const V &value) {
+    return UpdateItem(key, value, true);
+  }
+
+  // access item in current map
   V &AccessItem(const K &key) { return map_[key]; }
 
-  // access operator
+  // access operator (same as method 'AccessItem')
   V &operator[](const K &key) { return map_[key]; }
 
   // getters
