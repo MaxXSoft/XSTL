@@ -29,6 +29,9 @@ class Guard {
     }
   }
 
+  // invalidate the current guard
+  void Invalidate() { release_ = nullptr; }
+
  private:
   std::function<void()> release_;
 };
