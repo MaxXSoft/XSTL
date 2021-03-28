@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstddef>
 
 #include "cast.h"
 
@@ -21,7 +22,7 @@ struct FloatLong {
 int main(int argc, const char *argv[]) {
   IntDouble t = {42, 3.3};
   auto bytes = xstl::IntPtrCast<8>(&t);
-  for (int i = 0; i < sizeof(IntDouble); ++i) {
+  for (std::size_t i = 0; i < sizeof(IntDouble); ++i) {
     cout << hex << static_cast<int>(bytes[i]) << ' ';
   }
   cout << endl;
