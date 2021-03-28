@@ -14,7 +14,7 @@ endif
 # directories
 TOP_DIR = $(shell if [ "$$PWD" != "" ]; then echo $$PWD; else pwd; fi)
 TARGET_DIR = $(TOP_DIR)/build
-INC_DIR = $(TOP_DIR)/src
+INC_DIR = $(TOP_DIR)/xstl
 SRC_DIR = $(TOP_DIR)/examples
 
 # C++ compiler
