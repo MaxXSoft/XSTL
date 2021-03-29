@@ -15,10 +15,10 @@
       // catch segmentation fault here
     }
 */
-#define TRY_SEGFAULT                                        \
-  xstl::_segfault_impl::SegFaultGuard XSTL_SEGFAULT_CONCAT( \
-      __xstl_segfault_guard, __COUNTER__);                  \
-  if (!setjmp(xstl::_segfault_impl::segfault_jmp_point))
+#define TRY_SEGFAULT                                            \
+  if (xstl::_segfault_impl::SegFaultGuard XSTL_SEGFAULT_CONCAT( \
+          __xstl_segfault_guard, __COUNTER__);                  \
+      !setjmp(xstl::_segfault_impl::segfault_jmp_point))
 #define CATCH_SEGFAULT else
 #define XSTL_SEGFAULT_CONCAT(x, y) XSTL_SEGFAULT_CONCAT_IMPL(x, y)
 #define XSTL_SEGFAULT_CONCAT_IMPL(x, y) x ## y
