@@ -1,28 +1,31 @@
 #include <iostream>
-#include <vector>
+#include <memory>
 
 #include "segfault.h"
 
 using namespace std;
 
 int main(int argc, const char *argv[]) {
-  vector<int> v = {10};
-  cout << "v[0] = " << v[0] << endl;
+  auto arr = make_unique<int[]>(1);
+  arr[0] = 10;
+  cout << "arr[0] = " << arr[0] << endl;
   // first try
   TRY_SEGFAULT {
-    *(v.data()) = 11;
+    arr[0] = 11;
+    cout << "#1 ended" << endl;
   }
   CATCH_SEGFAULT {
     cout << "segmentation fault #1!" << endl;
   }
-  cout << "v[0] = " << v[0] << endl;
+  cout << "arr[0] = " << arr[0] << endl;
   // second try
   TRY_SEGFAULT {
-    *(v.data() + 10000) = 42;
+    arr[-1000000] = 42;
+    cout << "#2 ended" << endl;
   }
   CATCH_SEGFAULT {
-    cout << "segmentation fault #1!" << endl;
+    cout << "segmentation fault #2!" << endl;
   }
-  cout << "v[0] = " << v[0] << endl;
+  cout << "arr[0] = " << arr[0] << endl;
   return 0;
 }
