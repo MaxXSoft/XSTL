@@ -14,7 +14,6 @@ Write some lightweight gadgets to eXtend STL ...
 * **[nested.h](xstl/nested.h)**: nested map, supported recursive lookup
 * **[bitvalue.h](xstl/bitvalue.h)**: bit extraction/concatenation, can be used in both runtime and compile time
 * **[bitpat.h](xstl/bitpat.h)**: bitwise pattern match
-* **[segfault.h](xstl/segfault.h)**: `try-catch` mechanism for segmentation fault
 
 ### Deprecated Gadgets
 
