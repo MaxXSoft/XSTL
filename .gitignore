@@ -33,5 +33,6 @@ Temporary Items
 # VS Code
 .vscode
 
-# Build
+# Build & Debug
 build
+debug
