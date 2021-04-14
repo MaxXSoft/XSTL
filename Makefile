@@ -20,7 +20,7 @@ SRC_DIR = $(TOP_DIR)/examples
 # C++ compiler
 CXXFLAGS := $(DEBUG_ARG) $(OPT_ARG)
 CXXFLAGS += -Wall -Werror -std=c++17 -I$(INC_DIR)
-CXX := clang++ $(CXXFLAGS)
+CXX := g++ $(CXXFLAGS)
 
 # files
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp $(SRC_DIR)/**/*.cpp)
